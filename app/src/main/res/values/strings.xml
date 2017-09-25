@@ -5,4 +5,7 @@
     <string name="mult">Multiply</string>
     <string name="div">Divide</string>
     <string name="enter_hint">Enter a number</string>
+    <string name="result">The answer will be here</string>
+    <string name="error_div">Cannot divide by 0</string>
+    <string name="error_num">Number(s) input invalid</string>
 </resources>

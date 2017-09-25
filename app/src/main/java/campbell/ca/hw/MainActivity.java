@@ -6,6 +6,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.ImageView;
+
+import java.util.Locale;
 
 /**
  * Simple calculator, two entry fields on the ui
@@ -24,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     String TAG = "CALC";  // tag for Logging
     EditText etNum1, etNum2;
     TextView result = null;
+    ImageView imgview;
     double num1, num2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +37,11 @@ public class MainActivity extends AppCompatActivity {
         etNum1 = (EditText) findViewById(R.id.num1);
         etNum2 = (EditText) findViewById(R.id.num2);
         result = (TextView) findViewById(R.id.result);
+        imgview = (ImageView) findViewById(R.id.imageView);
+
+        if (Locale.getDefault().getDisplayLanguage().equals(new Locale("fr").getDisplayLanguage())) {
+            imgview.setImageResource(R.drawable.french_language_text);
+        }
     }
 
     public void addNums(View v) {
@@ -49,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         if (!readNums())
             return;
         if (num2 ==0 )
-            result.setText("Cannot divide by 0");
+            result.setText(R.string.error_div);
         else
             result.setText(Double.toString(num1/num2));
     }
@@ -60,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public boolean readNums()  {
       if (etNum1.getText().toString().isEmpty() ||  etNum2.getText().toString().isEmpty() ) {
-          result.setText("Number(s) input invalid");
+          result.setText(R.string.error_num);
           return false;
       }
         // TODO should be checking this ...

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Simple Calculatrice</string>
+    <string name="add">Ajouter</string>
+    <string name="div">Diviser</string>
+    <string name="enter_hint">Entrer un nombre</string>
+    <string name="mult">Multiplier</string>
+    <string name="result">La reponse va apparaitre ici</string>
+    <string name="subtr">Soustraire</string>
+    <string name="error_div">Peut pas divier par 0</string>
+    <string name="error_num">Nombre donné invalid</string>
+</resources>
